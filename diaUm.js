@@ -1,24 +1,44 @@
-let numeroUm = 1;
-let stringUm = '1';
-let numeroTrinta = 30;
-let stringTrinta = '30';
-let numeroDez = 10;
-let stringDez = '10';
+let numeroUm;
+let stringUm;
+let verificacaoString;
 
-if (Number (stringUm) == numeroUm) {
-  console.log('As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes')
-} else {
-  console.log('As variáveis numeroUm e stringUm não tem o mesmo valor')
+numeroUm = Number (prompt ('Digite um número para a variável "numeroUm":'))
+
+while (isNaN (numeroUm)) {
+    numeroUm = Number (prompt ('Digite um número para a variável "numeroUm":'))
 }
 
-if (isNaN (numeroTrinta) == false && isNaN (stringTrinta) == true) {
-  console.log('As variáveis numeroTrinta e stringTrinta tem o mesmo valor e mesmo tipo')
-} else {
-  console.log('As variáveis numeroTrinta e stringTrinta não tem o mesmo tipo')
+stringUm = prompt ('Digite um número para a variável "stringUm":')
+
+while (isNaN (stringUm)) {
+    stringUm = prompt ('Digite um número para a variável "stringUm":')
 }
 
-if (Number (stringDez) == numeroDez) {
-  console.log('As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes')
+verificacaoString = Number (prompt ('Quer manter a variável "stringUm" como uma string? Digite 1 para "Sim" e 2 para "Não".'));
+
+while (verificacaoString !== 1 && verificacaoString !== 2) {
+    verificacaoString = Number (prompt ('Quer manter a variável "stringUm" como uma string? Digite 1 para "Sim" e 2 para "Não".'));
+}
+
+if (verificacaoString == 1) {
+    console.log (`numeroUm: ${numeroUm}. É um número`);
+    console.log (`stringUm: ${stringUm}. É uma string`);
+    compararValores (numeroUm, stringUm);
 } else {
-  console.log('As variáveis numeroDez e stringDez não tem o mesmo valor')
+    stringUm = Number (stringUm);
+    console.log (`numeroUm: ${numeroUm}. É um número.`);
+    console.log (`stringUm: ${stringUm}. É um número.`);
+    compararValores (numeroUm, stringUm);
+}
+
+function compararValores (numero, string) {
+    if (Number (string) == numero && typeof (numero) !== typeof (string)) {
+    console.log (`As variáveis ${numero} e ${string} têm o mesmo valor, mas tipos diferentes`);
+    } else if (Number (string) == numero && typeof (numero) == typeof (string)) {
+    console.log (`As variáveis ${numero} e ${string} têm o mesmo valor e mesmo tipo`);
+    } else if (Number (string) !== numero && typeof (numero) == typeof (string)) {
+    console.log (`As variáveis ${numero} e ${string} não têm o mesmo valor, mas tipos iguais`);
+    } else {
+    console.log (`As variáveis ${numero} e ${string} não têm o mesmo valor e mesmo tipo`);
+    }
 }
