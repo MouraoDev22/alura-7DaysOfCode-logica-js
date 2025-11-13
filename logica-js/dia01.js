@@ -1,3 +1,5 @@
+// 7DaysOfCode - Lógica JS 1/7
+
 let numeroUm;
 let stringUm;
 let verificacaoString;
