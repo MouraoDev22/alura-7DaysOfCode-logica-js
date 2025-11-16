@@ -3,8 +3,10 @@
 let perguntaUm;
 let perguntaDois;
 let perguntaTres;
+let perguntaQuatro;
 let respostaUm;
 let respostaDois;
+let novaTecnologia;
 
 perguntaUm = Number (prompt ('Você deseja seguir para a área de Front-End ou Back-End? Digite 1 para Front e 2 para Back.'));
 
@@ -52,7 +54,10 @@ if (perguntaTres === 1) {
     alert (`Legal! Então você quer se tornar Fullstack e aprender ${respostaDois}.`);
 }
 
-// 4. Por fim, pergunte quais são as tecnologias nas quais a pessoa gostaria de se especializar ou de conhecer. 
-// Aqui, a pessoa pode responder N tecnologias, uma de cada vez. Então, enquanto ela continuar respondendo ok para a pergunta: 
-// “Tem mais alguma tecnologia que você gostaria de aprender?”, continue apresentando para ela o Prompt, para que ela complete o 
-// nome da tecnologia em questão. E, logo depois, apresente uma mensagem comentando algo sobre a linguagem inserida.
+perguntaQuatro = prompt ('Tem mais alguma tecnologia que você gostaria de aprender? Digite "ok" em caso positivo.');
+
+while (perguntaQuatro === 'ok'){
+    novaTecnologia = prompt ("Qual?");
+    alert (`${novaTecnologia} é realmente uma tecnologia muito legal!`);
+    perguntaQuatro = prompt ("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.");
+}
