@@ -7,11 +7,7 @@ let tentativasRestantes = 2;
 let tentativas = 1;
 let chute = Number (prompt ('Chute um número qualquer entre 1 e 10:'));
 
-while (isNaN (chute)) {
-    chute = Number (prompt ('Chute um número qualquer entre 1 e 10:'));
-}
-
-while (chute < 1 || chute > 10) {
+while (isNaN (chute) || chute < 1 || chute > 10) {
     chute = Number (prompt ('Chute um número qualquer entre 1 e 10:'));
 }
 
