@@ -15,6 +15,7 @@ if (chute === numEscolhido) {
     alert (`Parabéns! Você acertou o número com ${tentativas} tentativa!`);
 } else {
     while (chute !== numEscolhido) {
+        tentativas++;
         palavraTentativas = (tentativas > 1) ? "tentativas" : "tentativa";
         palavraTentativaRestantes = (tentativasRestantes == 2) ? "tentativas" : "tentativa";
         if (tentativasRestantes === 0) {
@@ -23,7 +24,6 @@ if (chute === numEscolhido) {
         }
         alert (`O número não é esse, você tem mais ${tentativasRestantes} ${palavraTentativaRestantes}.`);
         tentativasRestantes--;
-        tentativas++;
         chute = Number (prompt ('Chute um número qualquer entre 1 e 10:'));
     }
 
