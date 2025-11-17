@@ -1,3 +1,5 @@
+// 7DaysOfCode - Lógica JS 4/7
+
 let palavraTentativas = 'tentativa';
 let palavraTentativaRestantes; 
 let numEscolhido = Math.floor (Math.random () * (10 - 1 + 1) + 1)
